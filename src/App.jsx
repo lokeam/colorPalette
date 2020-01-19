@@ -11,7 +11,7 @@ function App() {
   console.log(generatePalette(baseColors[4]));
   return (
     <div className="App">
-      <Palette {...baseColors[6]}/>
+      <Palette palette={generatePalette(baseColors[6])}/>
     </div>
   );
 }
