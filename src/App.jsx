@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import logo from './logo.svg';
 
@@ -8,18 +8,32 @@ import baseColors from './baseColors';
 
 import './App.css';
 
-function App() {
-  console.log(generatePalette(baseColors[4]));
-  return (
-    <Switch>
-      <Route exact path="/" render={ () => <h1>Palette list here</h1> } />
-      <Route exact path="/palette/:id" render={ () => <h1>Different palette</h1> }/>
-    </Switch>
+class App extends Component {
+  findColorPalette(id) {
+    return baseColors.find(function (palette) {
+      return palette.id === id;
+    });
+  }
 
-    // <div className="App">
-    //   <Palette palette={generatePalette(baseColors[6])}/>
-    // </div>
-  );
+  render() {
+    return (
+      <Switch>
+        <Route exact path="/" render={ () => <h1>Palette list here</h1> } />
+        <Route exact path="/palette/:id"
+               render={ routeProps => (
+                 <Palette
+                   palette={generatePalette(
+                     this.findColorPalette(routeProps.match.params.id)
+                   )}
+                  />
+               )}
+        />
+      </Switch>
+      // <div className="App">
+      //   <Palette palette={generatePalette(baseColors[6])}/>
+      // </div>
+    );
+  }
 }
 
 export default App;
