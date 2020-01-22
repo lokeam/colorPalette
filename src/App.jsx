@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import logo from './logo.svg';
 
 import Palette from './Palette';
+import Palettelist from './PaletteList';
 import { generatePalette } from './helpers';
 import baseColors from './baseColors';
 
@@ -18,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" render={ () => <h1>Palette list here</h1> } />
+        <Route exact path="/" render={ () => <Palettelist palettes={ baseColors } /> } />
         <Route exact path="/palette/:id"
                render={ routeProps => (
                  <Palette

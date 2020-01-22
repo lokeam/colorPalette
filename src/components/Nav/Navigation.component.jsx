@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+import { Link } from 'react-router-dom';
 import Snackbar from '@material-ui/core/Snackbar';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
@@ -41,7 +42,7 @@ class Navigation extends Component {
     return (
       <nav className="navigation">
         <div className="logo">
-          <a href="#">color palette</a>
+          <Link to="/">palette</Link>
         </div>
         <div className="slider-container">
             <span>Level: {level}</span>
