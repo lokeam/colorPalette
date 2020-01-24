@@ -8,7 +8,20 @@
   cursor: pointer;
 
   &__colors {
-    background: #808080;
+    height: 150px;
+    width: 100%;
+    background: #dae1e4;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  &__minicolorbox {
+    height: 25%;
+    width: 20%;
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: -3.5px;
   }
 
   &__title {
