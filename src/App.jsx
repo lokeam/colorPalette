@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import logo from './logo.svg';
 
-import Palette from './Palette';
-import Palettelist from './PaletteList';
+import Palette from './pages/Palette/Palette';
+import Palettelist from './pages/Palette/PaletteList';
 import { generatePalette } from './helpers';
 import baseColors from './baseColors';
 
