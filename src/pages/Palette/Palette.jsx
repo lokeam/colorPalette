@@ -3,9 +3,6 @@ import ColorBox from '../../components/ColorBox/ColorBox.component';
 import Navigation from '../../components/Nav/Navigation.component';
 import './Palette.styles.scss';
 
-
-
-
 class Palette extends Component {
   constructor(props) {
     super(props);
@@ -30,14 +27,19 @@ class Palette extends Component {
   }
 
   render() {
-    const { colors, paletteName, emoji } = this.props.palette;
+    const { colors, paletteName, emoji, id } = this.props.palette;
     const { level, format } = this.state;
     const ColorBoxes = colors[level].map( color => (
-      <ColorBox background={color[format]} name={color.id} key={color.id}/>
+      <ColorBox background={color[format]}
+                name={color.id}
+                key={color.id}
+                moreUrl={`/palette/${id}/${color.id}`}/>
     ));
     return(
        <div className="palette">
-         <Navigation level={level} changeLevel={this.changeLevel} handleChange={this.changeFormat}/>
+         <Navigation level={level}
+                     changeLevel={this.changeLevel}
+                     handleChange={this.changeFormat}/>
          <div className="palette__colors">
            { ColorBoxes }
          </div>
