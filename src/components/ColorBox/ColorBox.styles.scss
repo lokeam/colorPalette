@@ -95,7 +95,8 @@
     text-transform: uppercase;
   }
 
-  &__copy-button {
+  &__copy-button,
+  &__back-button {
     width: 100px;
     height: 30px;
     position: absolute;
@@ -111,7 +112,11 @@
     line-height: 30px;
     color: #fff;
     text-transform: uppercase;
+    text-decoration: none;
     border: none;
+  }
+
+  &__copy-button {
     opacity: 0;
   }
 }

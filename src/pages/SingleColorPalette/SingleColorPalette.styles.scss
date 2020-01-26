@@ -1,0 +1,10 @@
+.singlecolorpalette {
+  .colorBox {
+    height: 50%;
+  }
+
+  &__goback {
+    background-color: #000;
+    color: #fff;
+  }
+}
