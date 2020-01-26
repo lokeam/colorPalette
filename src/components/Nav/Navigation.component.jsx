@@ -37,14 +37,15 @@ class Navigation extends Component {
   }
 
   render() {
-    const { level, changeLevel } = this.props;
+    const { level, changeLevel, showColorSlider } = this.props;
     const { format } = this.state;
     return (
       <nav className="navigation">
         <div className="logo">
           <Link to="/">palette</Link>
         </div>
-        <div className="slider-container">
+        { showColorSlider && (
+          <div className="slider-container">
             <span>Level: {level}</span>
             <div className="slider">
               <Slider defaultValue={level}
@@ -55,6 +56,7 @@ class Navigation extends Component {
               />
             </div>
           </div>
+        )}
         <div className="select-container">
           <Select value={format} onChange={this.handleFormatChange}>
             <MenuItem value="hex">HEX - #FFFFFF</MenuItem>
@@ -67,7 +69,7 @@ class Navigation extends Component {
                   autoHideDuration={3000}
                   message={<span id="message-id">Format Changed to {format.toUpperCase()} </span>}
                   ContentProps={{
-                    "aria-describedBy": "message-id"
+                    "aria-describedby": "message-id"
                   }}
                   onClose={this.closeSnackbar}
                   action={[
