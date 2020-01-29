@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Palette from './pages/Palette/Palette';
 import PaletteList from './pages/Palette/PaletteList';
 import SingleColorPalette from "./pages/SingleColorPalette/SingleColorPalette.component";
+import NewPaletteForm from "./pages/NewPaletteForm/NewPaletteForm.component";
 
 import { generatePalette } from './helpers';
 import baseColors from './baseColors';
@@ -20,6 +21,10 @@ class App extends Component {
   render() {
     return (
       <Switch>
+        <Route exact path="/palette/new"
+                     render={ () => <NewPaletteForm /> }
+        />
+
         <Route exact path="/"
                      render={ routeProps => (
                        <PaletteList palettes={ baseColors } {...routeProps} />

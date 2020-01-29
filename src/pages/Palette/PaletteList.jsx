@@ -16,6 +16,7 @@ class PaletteList extends Component {
         <div className="palettelist__container">
           <div className="palettelist__title">
             <h1>color palette</h1>
+            <Link to="/palette/new">Create a New Palette</Link>
           </div>
           <div className="palettelist__minipalette-container">
             { palettes.map(palette => (

@@ -18,6 +18,11 @@
     width: 100%;
     justify-content: space-between;
     color: #fff;
+    align-items: center;
+    & a {
+      color: #fff;
+      text-decoration: none;
+    }
   }
 
   &__minipalette-container {
